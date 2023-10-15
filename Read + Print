@@ -1,0 +1,83 @@
+#include <iostream>
+using namespace std;
+
+struct strAddress {
+
+	string Street_Name; 
+	string Building_Number; 
+	string Zip_Code;
+
+};
+
+struct strInfo {
+
+	string First_Name; 
+	string Last_Name; 
+	short Age; 
+	string Phone; 
+	strAddress Address; 
+
+};
+
+void ReadInfo(strInfo &Info) {
+
+	cout << "Enter First Name" << endl; 
+	cin >> Info.First_Name; 
+
+	cout << "Enter Last Name" << endl; 
+	cin >> Info.Last_Name; 
+
+	cout << "Enter Age" << endl; 
+	cin >> Info.Age; 
+
+	cout << "Enter Phone" << endl; 
+	cin >> Info.Phone; 
+
+	cout << "Enter Street Name" << endl; 
+	cin >> Info.Address.Street_Name; 
+
+	cout << "Enter Building Number" << endl; 
+	cin >> Info.Address.Building_Number; 
+
+	cout << "Enter Zip Code" << endl; 
+	cin >> Info.Address.Zip_Code;
+
+}
+
+void PrintInfo(strInfo Info) {
+
+	cout << "*********************************" << endl;
+	cout << "First Name: " << Info.First_Name << endl;
+	cout << "Last Name: " << Info.Last_Name << endl; 
+	cout << "Age: " << Info.Age << endl; 
+	cout << "Phone: " << Info.Phone << endl; 
+	cout << "Street Name: " << Info.Address.Street_Name << endl; 
+	cout << "Building Number: " << Info.Address.Building_Number << endl; 
+	cout << "Zip Code: " << Info.Address.Zip_Code << endl; 
+	cout << "*********************************" << endl;
+
+}
+
+void ReadPersonsInfo(strInfo Persons[2]) {
+
+	ReadInfo(Persons[0]);
+	ReadInfo(Persons[1]); 
+}
+
+void PrintPersonsInfo(strInfo Persons[2]) {
+
+	PrintInfo(Persons[0]); 
+	PrintInfo(Persons[1]); 
+}
+
+
+int main() {
+
+	strInfo Persons[2];
+	ReadPersonsInfo(Persons);
+	PrintPersonsInfo(Persons); 
+
+
+	return 0;
+
+}
