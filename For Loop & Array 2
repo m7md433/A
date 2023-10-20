@@ -1,0 +1,79 @@
+#include <iostream>
+using namespace std;
+
+struct strInfo {
+
+	string FirstName;
+	string LastName; 
+	int Age; 
+	string Phone; 
+};
+
+void ReadInfo(strInfo &Info) {
+
+	cout << "Enter Your First Name" << endl; 
+	cin >> Info.FirstName; 
+
+	cout << "Enter Your Last Name" << endl; 
+	cin >> Info.LastName; 
+	 
+	cout << "Enter Your Age" << endl; 
+	cin >> Info.Age; 
+
+	cout << "Enter Your Phone" << endl; 
+	cin >> Info.Phone;
+} 
+
+void PrintInfo(strInfo Info) {
+
+	cout << "**********************************" << endl; 
+	cout << "First Name: " << Info.FirstName << endl; 
+	cout << "Last Name: " << Info.LastName << endl; 
+	cout << "Age: " << Info.Age << endl; 
+	cout << "Phone: " << Info.Phone << endl;
+	cout << endl << endl; 
+
+
+} 
+
+void ReadPersonsInfo(strInfo Persons[100], int& NumberOfPersons) {
+
+	cout << "How Many Persons?" << endl; 
+	cin >> NumberOfPersons; 
+
+	for (int i = 0; i <= NumberOfPersons - 1; i++) {
+
+		cout << "\nPlease Enter Persons's " << i + 1 << endl << endl; 
+		ReadInfo(Persons[i]);
+	}
+}
+
+void PrintPersonsInfo(strInfo Persons[100], int NumberOfPersons) {
+
+	for (int i = 0; i <= NumberOfPersons - 1; i++) {
+
+		cout << "\nPerson's " << i + 1 << " Info: \n" << endl;
+		PrintInfo(Persons[i]);
+	}
+}
+
+
+
+
+int main() {
+
+	strInfo Persons[100]; 
+	int NumberOfPersons = 1; 
+
+	ReadPersonsInfo(Persons, NumberOfPersons);
+	PrintPersonsInfo(Persons, NumberOfPersons);
+
+
+	
+
+
+
+
+	return 0;
+
+}
