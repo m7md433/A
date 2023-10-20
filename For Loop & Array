@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+void ReadArrayData(int Array[100], int& Length) {
+
+	cout << "How Many Numbers Do Yo Want To Enter? 1 To 100?" << endl; 
+	cin >> Length; 
+
+	for (int i = 0; i <= Length - 1; i++) {
+
+		cout << "Please Enter Number " << i + 1 << endl; 
+		cin >> Array[i]; 
+	}
+}
+
+void PrintArrayData(int Array[100], int Length) {
+
+	for (int i = 0; i <= Length - 1; i++) {
+
+		cout << "Number [" << i + 1 <<"] : " << Array[i] << endl;
+	}
+} 
+
+int SumArrayData(int Array[100], int Length) {
+
+	int Sum = 0; 
+
+	for (int i = 0; i <= Length - 1; i++) {
+
+		Sum += Array[i]; 
+	}
+
+	return Sum;
+}
+
+
+
+
+
+int main() {
+
+	int Array[100], Length; 
+	ReadArrayData(Array, Length);
+	PrintArrayData(Array, Length);
+
+	float Sum = SumArrayData(Array, Length);
+
+	cout << endl << "*************************************" << endl; 
+	cout << "The Sum Of Numbers: " << SumArrayData(Array, Length) << endl; 
+	cout << "The Average Of Numbers: " << Sum / Length << endl; 
+	
+
+		
+	return 0;
+
+
+
+}
