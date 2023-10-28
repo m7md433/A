@@ -1,0 +1,410 @@
+{\rtf1\fbidis\ansi\ansicpg1256\deff0\nouicompat\deflang1025{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset0 Cascadia Mono;}}
+{\colortbl ;\red128\green128\blue128;\red0\green0\blue0;\red163\green21\blue21;\red0\green0\blue255;\red43\green145\blue175;\red0\green128\blue128;\red47\green79\blue79;}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\ltrpar\sa200\sl276\slmult1\f0\fs22\lang9 COURSE 4: Algorithms & Problem Solving\par
+\par
+PROBLEM 1: Print your name. \par
+\cf1\f1\fs19 #include\cf2  \cf3 <iostream>\cf2\par
+\cf1 #include\cf2  \cf3 <string>\cf2\par
+\cf4 using\cf2  \cf4 namespace\cf2  std; \par
+\cf4 void\cf2  PrintName(\cf5 string\cf2  \cf1 Name\cf2 ) \{\par
+\tab cout \cf6 <<\cf2  \cf3 "Your Name Is: "\cf2  \cf6 <<\cf2  \cf1 Name\cf2  \cf6 <<\cf2  endl; \par
+\}\par
+\cf4 int\cf2  main() \{\par
+\tab PrintName(\cf3 "Mohammed"\cf2 );\par
+\tab\cf4 return\cf2  0; \par
+\}\par
+\par
+________________________________________________________________________________\par
+\par
+PROBLEM 2: Read name and print it. \par
+\par
+\cf1 #include\cf2  \cf3 <iostream>\cf2\par
+\cf1 #include\cf2  \cf3 <string>\cf2\par
+\cf4 using\cf2  \cf4 namespace\cf2  std; \par
+\par
+\cf5 string\cf2  ReadName() \{\par
+\par
+\tab\cf5 string\cf2  Name;\par
+\tab cout \cf6 <<\cf2  \cf3 "Enter Your Name"\cf2  \cf6 <<\cf2  endl; \par
+\tab getline(cin, Name);\par
+\tab\cf4 return\cf2  Name; \par
+\}\par
+\par
+\cf4 void\cf2  PrintName(\cf5 string\cf2  \cf1 Name\cf2 ) \{\par
+\par
+\tab cout \cf6 <<\cf2  endl \cf6 <<\cf2  \cf3 "Your name is: "\cf2  \cf6 <<\cf2  \cf1 Name\cf2  \cf6 <<\cf2  endl; \par
+\}\par
+\par
+\par
+\cf4 int\cf2  main() \{\par
+\par
+\tab PrintName(ReadName());\par
+\tab\par
+\tab\cf4 return\cf2  0; \par
+\}\par
+\par
+\par
+--------------------------------------------------------------------------------\par
+\par
+PROBLEM 3:\par
+\par
+\cf1 #include\cf2  \cf3 <iostream>\cf2\par
+\cf1 #include\cf2  \cf3 <string>\cf2\par
+\cf4 using\cf2  \cf4 namespace\cf2  std; \par
+\par
+\cf4 enum\cf2  \cf5 enNumberType\cf2  \{\cf7 Odd\cf2  = 1, \cf7 Even\cf2  = 2\};\par
+\par
+\cf4 int\cf2  ReadNumber() \{\par
+\par
+\tab\cf4 int\cf2  Num;\par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Enter a Number"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  Num;\par
+\tab\cf4 return\cf2  Num;\par
+\}\par
+\par
+\cf5 enNumberType\cf2  CheckNumberType(\cf4 int\cf2  \cf1 Num\cf2 ) \{\par
+\par
+\tab\cf4 int\cf2  Result = \cf1 Num\cf2  % 2; \par
+\tab\cf4 if\cf2  (Result == 0)\par
+\tab\tab\cf4 return\cf2  \cf5 enNumberType\cf2 ::\cf7 Even\cf2 ;\par
+\tab\cf4 else\cf2\par
+\tab\tab\cf4 return\cf2  \cf5 enNumberType\cf2 ::\cf7 Odd\cf2 ;\par
+\}\par
+\par
+\cf4 void\cf2  PrintNumberType(\cf5 enNumberType\cf2  \cf1 NumberType\cf2 ) \{\par
+\par
+\tab\cf4 if\cf2  (\cf1 NumberType\cf2  == \cf5 enNumberType\cf2 ::\cf7 Even\cf2 )\par
+\tab\tab cout \cf6 <<\cf2  endl \cf6 <<\cf2  \cf3 "Number Is Even"\cf2  \cf6 <<\cf2  endl;\par
+\tab\cf4 else\cf2\par
+\tab\tab cout \cf6 <<\cf2  endl \cf6 <<\cf2  \cf3 "Number Is Odd"\cf2  \cf6 <<\cf2  endl; \par
+\}\par
+\par
+\par
+\cf4 int\cf2  main() \{\par
+\par
+\tab PrintNumberType(CheckNumberType(ReadNumber()));\par
+\tab\par
+\tab\cf4 return\cf2  0; \par
+\}\par
+\par
+--------------------------------------------------------------------------------\par
+\par
+PROBLEM 4: Hire a driver Case 1. \par
+\par
+\cf1 #include\cf2  \cf3 <iostream>\cf2\par
+\cf4 using\cf2  \cf4 namespace\cf2  std; \par
+\par
+\cf4 struct\cf2  \cf5 strInfo\cf2  \{\par
+\par
+\tab\cf4 short\cf2  Age; \par
+\tab\cf4 bool\cf2  HasDrivingLicense;\par
+\};\par
+\par
+\cf5 strInfo\cf2  ReadInfo() \{\par
+\par
+\tab\cf5 strInfo\cf2  Info; \par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Please Enter Your Age"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  Info.Age; \par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Do You Have Driver License?"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  Info.HasDrivingLicense; \par
+\par
+\tab\cf4 return\cf2  Info; \par
+\}\par
+\par
+\cf4 bool\cf2  IsAccepted(\cf5 strInfo\cf2  \cf1 Info\cf2 ) \{\par
+\par
+\tab\par
+\tab\cf4 return\cf2  (\cf1 Info\cf2 .Age > 21 && \cf1 Info\cf2 .HasDrivingLicense); \par
+\par
+\}\par
+\par
+\cf4 void\cf2  PrintResult(\cf5 strInfo\cf2  \cf1 Info\cf2 ) \{\par
+\par
+\tab\cf4 if\cf2  (IsAccepted(\cf1 Info\cf2 )) \{\par
+\par
+\tab\tab cout \cf6 <<\cf2  \cf3 "Hired"\cf2  \cf6 <<\cf2  endl; \par
+\tab\}\par
+\tab\cf4 else\cf2  \{\par
+\par
+\tab\tab cout \cf6 <<\cf2  \cf3 "Rejected"\cf2  \cf6 <<\cf2  endl; \par
+\tab\}\par
+\}\par
+\par
+\par
+\cf4 int\cf2  main() \{\par
+\par
+\tab PrintResult(ReadInfo());\par
+\par
+\tab\cf4 return\cf2  0;\par
+\}\par
+\par
+--------------------------------------------------------------------------------\par
+\par
+PROBLEM 5: Hire a driver Case 2.\par
+\par
+\cf1 #include\cf2  \cf3 <iostream>\cf2\par
+\cf4 using\cf2  \cf4 namespace\cf2  std; \par
+\par
+\cf4 struct\cf2  \cf5 strInfo\cf2  \{\par
+\par
+\tab\cf4 short\cf2  Age; \par
+\tab\cf4 bool\cf2  HasDrivingLicense;\par
+\tab\cf4 bool\cf2  HasRecommendation;\par
+\};\par
+\par
+\cf5 strInfo\cf2  ReadInfo() \{\par
+\par
+\tab\cf5 strInfo\cf2  Info; \par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Please Enter Your Age"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  Info.Age; \par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Do You Have Driver License?"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  Info.HasDrivingLicense; \par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Do You Have Recommendation"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  Info.HasRecommendation;\par
+\par
+\tab\cf4 return\cf2  Info; \par
+\}\par
+\par
+\cf4 bool\cf2  IsAccepted(\cf5 strInfo\cf2  \cf1 Info\cf2 ) \{\par
+\par
+\tab\cf4 if\cf2  (\cf1 Info\cf2 .HasRecommendation == 1) \{\par
+\par
+\tab\tab\cf4 return\cf2  \cf4 true\cf2 ;\par
+\tab\}\par
+\tab\cf4 else\cf2  \{\par
+\par
+\tab\tab\cf4 return\cf2  (\cf1 Info\cf2 .Age > 21 && \cf1 Info\cf2 .HasDrivingLicense);\par
+\par
+\tab\}\par
+\tab\par
+\par
+\}\par
+\par
+\cf4 void\cf2  PrintResult(\cf5 strInfo\cf2  \cf1 Info\cf2 ) \{\par
+\par
+\tab\cf4 if\cf2  (IsAccepted(\cf1 Info\cf2 )) \{\par
+\par
+\tab\tab cout \cf6 <<\cf2  \cf3 "Hired"\cf2  \cf6 <<\cf2  endl; \par
+\tab\}\par
+\tab\cf4 else\cf2  \{\par
+\par
+\tab\tab cout \cf6 <<\cf2  \cf3 "Rejected"\cf2  \cf6 <<\cf2  endl; \par
+\tab\}\par
+\}\par
+\par
+\par
+\cf4 int\cf2  main() \{\par
+\par
+\tab PrintResult(ReadInfo());\par
+\par
+\tab\cf4 return\cf2  0;\par
+\}\par
+\par
+--------------------------------------------------------------------------------\par
+\par
+PROBLEM 6: Print Full Name. \par
+\par
+\cf1 #include\cf2  \cf3 <iostream>\cf2\par
+\cf4 using\cf2  \cf4 namespace\cf2  std; \par
+\par
+\cf4 struct\cf2  \cf5 stInfo\cf2  \{\par
+\par
+\tab\cf5 string\cf2  FirstName;\par
+\tab\cf5 string\cf2  LastName;\par
+\};\par
+\par
+\cf5 stInfo\cf2  ReadInfo() \{\par
+\par
+\tab\cf5 stInfo\cf2  Info; \par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Please enter your first name?"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  Info.FirstName;\par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Please enter your last name?"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  Info.LastName; \par
+\par
+\tab\cf4 return\cf2  Info; \par
+\}\par
+\par
+\cf5 string\cf2  GetFullName(\cf5 stInfo\cf2  \cf1 Info\cf2 ) \{\par
+\par
+\tab\cf5 string\cf2  FullName;\par
+\par
+\tab\cf4 return\cf2  FullName \cf6 =\cf2  \cf1 Info\cf2 .FirstName \cf6 +\cf2  \cf3 " "\cf2  \cf6 +\cf2  \cf1 Info\cf2 .LastName;\par
+\}\par
+\par
+\cf4 void\cf2  PrintFullName(\cf5 string\cf2  \cf1 FullName\cf2 ) \{\par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "\\nYour Full Name Is: "\cf2  \cf6 <<\cf2  \cf1 FullName\cf2  \cf6 <<\cf2  endl; \par
+\}\par
+\par
+\cf4 int\cf2  main() \{\par
+\par
+\tab PrintFullName(GetFullName(ReadInfo()));\par
+\par
+\tab\cf4 return\cf2  0;\par
+\}\par
+\par
+--------------------------------------------------------------------------------\par
+PROBLEM 7: Half Number. \par
+\par
+\cf1 #include\cf2  \cf3 <iostream>\cf2\par
+\cf1 #include\cf2  \cf3 <string>\cf2\par
+\cf4 using\cf2  \cf4 namespace\cf2  std; \par
+\par
+\cf4 int\cf2  ReadNumber() \{\par
+\par
+\tab\cf4 int\cf2  Num; \par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Please Enter a Number"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  Num; \par
+\tab\cf4 return\cf2  Num; \par
+\} \par
+\par
+\cf4 float\cf2  CalculateHafNamber(\cf4 int\cf2  \cf1 Num\cf2 ) \{\par
+\par
+\tab\cf4 return\cf2  (\cf4 float\cf2 ) \cf1 Num\cf2  / 2;\par
+\} \par
+\par
+\cf4 void\cf2  PrintNumber(\cf4 int\cf2  \cf1 Num\cf2 ) \{\par
+\par
+\tab\cf5 string\cf2  Result = \cf3 "Half Of: "\cf2  \cf6 +\cf2  to_string(\cf1 Num\cf2 ) \cf6 +\cf2  \cf3 " Is: "\cf2  \cf6 +\cf2  to_string(CalculateHafNamber(\cf1 Num\cf2 ));\par
+\tab cout \cf6 <<\cf2  \cf3 "\\n"\cf2  \cf6 <<\cf2  Result \cf6 <<\cf2  endl; \par
+\par
+ \}\par
+\par
+\cf4 int\cf2  main() \{\par
+\par
+\tab PrintNumber(ReadNumber());\par
+\tab\cf4 return\cf2  0;\par
+\}\par
+\par
+--------------------------------------------------------------------------------\par
+PROBLEM 8: Mark Pass Fail\par
+\par
+\cf1 #include\cf2  \cf3 <iostream>\cf2  \par
+\cf4 using\cf2  \cf4 namespace\cf2  std; \par
+\par
+\cf4 enum\cf2  \cf5 enPassFail\cf2  \{\cf7 PASS\cf2  = 1, \cf7 FAIL\cf2  = 0\};\par
+\par
+\cf4 int\cf2  ReadMark() \{\par
+\par
+\tab\cf4 int\cf2  Mark;\par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Please Enter your Mark"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  Mark; \par
+\tab\cf4 return\cf2  Mark; \par
+\}\par
+\par
+\cf5 enPassFail\cf2  CheckMark(\cf4 int\cf2  \cf1 Mark\cf2 ) \{\par
+\par
+\tab\cf4 if\cf2  (\cf1 Mark\cf2  > 50)\par
+\tab\tab\cf4 return\cf2  \cf5 enPassFail\cf2 ::\cf7 PASS\cf2 ;\par
+\tab\cf4 else\cf2\par
+\tab\tab\cf4 return\cf2  \cf5 enPassFail\cf2 ::\cf7 FAIL\cf2 ;\par
+\par
+\}\par
+\par
+\cf4 void\cf2  PrintMark(\cf4 int\cf2  \cf1 Mark\cf2 ) \{\par
+\par
+\tab\cf4 if\cf2  (CheckMark(\cf1 Mark\cf2 ) == \cf5 enPassFail\cf2 ::\cf7 PASS\cf2 )\par
+\tab\tab cout \cf6 <<\cf2  \cf3 "You Passed"\cf2  \cf6 <<\cf2  endl;\par
+\tab\cf4 else\cf2\par
+\tab\tab cout \cf6 <<\cf2  \cf3 "You Faild"\cf2  \cf6 <<\cf2  endl; \par
+\}\par
+\par
+\cf4 int\cf2  main() \{\par
+\par
+\tab PrintMark(ReadMark()); \par
+\}\par
+\par
+\cf0\f0\fs22 -----------------------------------------------------------------------------------------------------------------------\par
+\par
+PROBLEM 9: Sum Of Three Numbers. \par
+\par
+\cf4\f1\fs19 using\cf2  \cf4 namespace\cf2  std; \par
+\par
+\cf4 void\cf2  ReadThreeNumbers(\cf4 int\cf2 & \cf1 Num1\cf2 , \cf4 int\cf2 & \cf1 Num2\cf2 , \cf4 int\cf2 & \cf1 Num3\cf2 ) \{\par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Please enter your Number 1 ?"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  \cf1 Num1\cf2 ; \par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Please enter your Number 2 ?"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  \cf1 Num2\cf2 ; \par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Please enter your Number 3 ?"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  \cf1 Num3\cf2 ; \par
+\}\par
+\par
+\cf4 int\cf2  SumOfThreeNumbers(\cf4 int\cf2  \cf1 Num1\cf2 , \cf4 int\cf2  \cf1 Num2\cf2 , \cf4 int\cf2  \cf1 Num3\cf2 ) \{\par
+\par
+\tab\cf4 return\cf2  \cf1 Num1\cf2  + \cf1 Num2\cf2  + \cf1 Num3\cf2 ; \par
+\}\par
+\par
+\par
+\cf4 void\cf2  PrintSumOfThreeNumbers(\cf4 int\cf2  \cf1 Total\cf2 ) \{\par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "The Sum Of Three Numbers Is: "\cf2  \cf6 <<\cf2  \cf1 Total\cf2  \cf6 <<\cf2  endl; \par
+\}\par
+\par
+\cf4 int\cf2  main() \{\par
+\par
+\tab\cf4 int\cf2  Num1, Num2, Num3; \par
+\tab ReadThreeNumbers(Num1, Num2, Num3); \par
+\tab PrintSumOfThreeNumbers(SumOfThreeNumbers(Num1, Num2, Num3)); \par
+\}\par
+\par
+--------------------------------------------------------------------------------\par
+\par
+PROBLEM 10: Average of 3 Marks. \par
+\par
+\cf1 #include\cf2  \cf3 <iostream>\cf2  \par
+\cf4 using\cf2  \cf4 namespace\cf2  std; \par
+\par
+\cf4 void\cf2  ReadMarks(\cf4 int\cf2 & \cf1 Mark1\cf2 , \cf4 int\cf2 & \cf1 Mark2\cf2 , \cf4 int\cf2 & \cf1 Mark3\cf2 ) \{\par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Please enter Mark 1"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  \cf1 Mark1\cf2 ;\par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Please enter Mark 2"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  \cf1 Mark2\cf2 ; \par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "Please enter Mark 3"\cf2  \cf6 <<\cf2  endl; \par
+\tab cin \cf6 >>\cf2  \cf1 Mark3\cf2 ; \par
+\}\par
+\par
+\cf4 int\cf2  SumOfMarks(\cf4 int\cf2  \cf1 Num1\cf2 ,\cf4 int\cf2  \cf1 Num2\cf2 , \cf4 int\cf2  \cf1 Num3\cf2 )\par
+\{\par
+\par
+\tab\cf4 return\cf2  \cf1 Num1\cf2  + \cf1 Num2\cf2  + \cf1 Num3\cf2 ; \par
+\}\par
+\par
+\cf4 float\cf2  CalculateAverage(\cf4 int\cf2  \cf1 Num1\cf2 , \cf4 int\cf2  \cf1 Num2\cf2 , \cf4 int\cf2  \cf1 Num3\cf2 ) \{\par
+\par
+\tab\cf4 return\cf2  (\cf4 float\cf2 )SumOfMarks(\cf1 Num1\cf2 ,\cf1 Num2\cf2 ,\cf1 Num3\cf2 ) / 3;\par
+\}\par
+\par
+\cf4 void\cf2  PrintMarks(\cf4 float\cf2  \cf1 Average\cf2 ) \{\par
+\par
+\tab cout \cf6 <<\cf2  \cf3 "The Total Of Marks Is: "\cf2  \cf6 <<\cf2  \cf1 Average\cf2  \cf6 <<\cf2  endl; \par
+\}\par
+\par
+\cf4 int\cf2  main() \{\par
+\par
+\tab\cf4 int\cf2  Num1, Num2, Num3\{\}; \par
+\tab ReadMarks(Num1, Num2, Num2); \par
+\tab PrintMarks(CalculateAverage(Num1, Num2, Num3));\par
+\}\par
+\par
+--------------------------------------------------------------------------------\par
+\par
+PROBLEM 11: \cf0\f0\fs22\par
+}
+ 
