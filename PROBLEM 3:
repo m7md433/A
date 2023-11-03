@@ -1,0 +1,41 @@
+PROBLEM 3: Print Number Even or Odd.
+
+#include <iostream>
+#include <string>
+using namespace std; 
+
+enum enNumberType {Odd = 1, Even = 2};
+
+int ReadNumber() {
+
+	int Num;
+
+	cout << "Enter a Number" << endl; 
+	cin >> Num;
+	return Num;
+}
+
+enNumberType CheckNumberType(int Num) {
+
+	int Result = Num % 2; 
+	if (Result == 0)
+		return enNumberType::Even;
+	else
+		return enNumberType::Odd;
+}
+
+void PrintNumberType(enNumberType NumberType) {
+
+	if (NumberType == enNumberType::Even)
+		cout << endl << "Number Is Even" << endl;
+	else
+		cout << endl << "Number Is Odd" << endl; 
+}
+
+
+int main() {
+
+	PrintNumberType(CheckNumberType(ReadNumber()));
+	
+	return 0; 
+}
