@@ -1,0 +1,50 @@
+PROBLEM 4: Hire a driver Case 1. 
+
+#include <iostream>
+using namespace std; 
+
+struct strInfo {
+
+	short Age; 
+	bool HasDrivingLicense;
+};
+
+strInfo ReadInfo() {
+
+	strInfo Info; 
+
+	cout << "Please Enter Your Age" << endl; 
+	cin >> Info.Age; 
+
+	cout << "Do You Have Driver License?" << endl; 
+	cin >> Info.HasDrivingLicense; 
+
+	return Info; 
+}
+
+bool IsAccepted(strInfo Info) {
+
+	
+	return (Info.Age > 21 && Info.HasDrivingLicense); 
+
+}
+
+void PrintResult(strInfo Info) {
+
+	if (IsAccepted(Info)) {
+
+		cout << "Hired" << endl; 
+	}
+	else {
+
+		cout << "Rejected" << endl; 
+	}
+}
+
+
+int main() {
+
+	PrintResult(ReadInfo());
+
+	return 0;
+}
