@@ -1,0 +1,12 @@
+PROBLEM 1: Print your name. 
+
+#include <iostream>
+#include <string>
+using namespace std; 
+void PrintName(string Name) {
+	cout << "Your Name Is: " << Name << endl; 
+}
+int main() {
+	PrintName("Mohammed");
+	return 0; 
+}
